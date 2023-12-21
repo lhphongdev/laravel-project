@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('login', [AuthController::class, 'login']);
+
 // API CRUD for departments
 Route::get('departments', [DepartmentController::class, 'index']);
 Route::post('departments', [DepartmentController::class, 'store']);
